@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+    stages{
+        stage('clone repo')
+        {
+            steps{
+                git branch: 'main' ,url:'https://github.com/MariaMateen912/myjenkins.git'
+            }
+        }
+        stage('Intall dependencies') {
+            steps{
+            sh 'npm install'
+        }
+        }
+        stage('Testing my application')
+        {
+            steps{
+                sh 'npm test'
+            }
+        }
+        stage('Start yhe appliction'){
+            input{
+                message 'Confirm to start'
+                ok "click on ok"
+                submitter 'Maria'
+            }
+            steps{
+                sh 'npm start'
+            }
+        }
+    }
+}
