@@ -12,3 +12,16 @@ app.get('/', (req, res) => {
 app.listen(port, () => console.log(`Hello world app started & listening on port ${port}!`))
 
 module.exports = app;
+
+
+docker compose up -d
+docker ps -a
+docker exec -it conntainerId/bin/bash
+msql -u user -p
+show databases
+
+
+
+docker pull nginx
+docker images
+docker run -d --restart=always -p 80:80 imageid localhost 80
