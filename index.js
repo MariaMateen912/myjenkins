@@ -24,4 +24,10 @@ show databases
 
 docker pull nginx
 docker images
-docker run -d --restart=always -p 80:80 imageid localhost 80
+docker run -d --restart=always -p 80:80 imageid /bin/bash
+
+for ubuntu
+-ls cs etc var
+    docker exec -it conntainerId/bin/bash
+
+ngrok http http://localhost:8080
